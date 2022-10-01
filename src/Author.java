@@ -16,17 +16,21 @@ public class Author {
         return this.lastName;
     }
 
-    public String toString() {
-        return this.firtsName +" "+ this.lastName;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Author)) return false;
+        Author author = (Author) o;
+        return firtsName.equals(author.firtsName) && lastName.equals(author.lastName);
     }
-    public boolean equals(Object other) {
-        if (this.getClass() != other.getClass()) {
-            return false;
-        }
-        Author c2 = (Author) other;
-        return firtsName.equals(c2.firtsName);
-    }
+
+    @Override
     public int hashCode() {
-        return Objects.hash(firtsName);
+        return Objects.hash(firtsName, lastName);
+    }
+
+    @Override
+    public String toString() {
+        return firtsName +" "+ lastName;
     }
 }
