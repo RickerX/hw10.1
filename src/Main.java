@@ -1,6 +1,6 @@
 public class Main {
     public static void separation() {
-        System.out.println("================================================================================");
+        System.out.println("===============================================================================");
     }
     public static void main(String[] args) {
         Author tolstoi = new Author("Lev","Tolstoi");
